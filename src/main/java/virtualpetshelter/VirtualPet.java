@@ -12,35 +12,41 @@ public class VirtualPet {
 	private String description;
 
 	// constructor 1
-	public VirtualPet(int hunger, int thirst, int bathroom, int energy, String status) {
+	public VirtualPet(String name, String description, int hunger, int thirst, int bathroom, int energy) {
+		this.name = name;
+		this.description = description;
 		this.hunger = hunger;
 		this.thirst = thirst;
 		this.bathroom = bathroom;
 		this.energy = energy;
-		this.status = status;
+
 	}
-	
+
 	// constructor 2
 	public VirtualPet(String name, String description) {
-		this.setName(name);
-		this.setDescription(description);
-	}
-	public void setName(String name) {
 		this.name = name;
-	}
-	public void setDescription(String description) {
 		this.description = description;
+		this.hunger = 25;
+		this.thirst = 25;
+		this.bathroom = 25;
+		this.energy = 25;
+
 	}
-	
-	//getter for name and description 
+
+	// getter for constructor2: name and description
 	public String getName() {
 		return name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
-
-	// accessor aka getter
+//	@Override
+//	public String toString() {
+//		return "name: " + name + ", description: " + description;
+//	}
+	
+	// accessor aka getters for constructor1
 	public int getHunger() {
 		return hunger;
 	}
@@ -63,8 +69,7 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "hunger: " + hunger + ", thirst: " + thirst + ", bathroom: " + bathroom + ", energy: " + energy
-				+ ", status: " + status;
+		return "name: " + name + ", description: " + description + ", hunger: " + hunger + ", thirst: " + thirst + ", bathroom: " + bathroom + ", energy: " + energy;
 	}
 
 	// modifier Method
