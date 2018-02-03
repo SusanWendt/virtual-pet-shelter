@@ -56,4 +56,16 @@ public class VirtualPetShelter {
 		VirtualPet playWithPet = getPetByName(name);
 		playWithPet.play();
 	}
+
+	public void letOutAllPets() {
+		for (VirtualPet pet : pets()) {
+			pet.letOut();
+		}
+	}
+
+	public void playWithAllPets() {
+		for (VirtualPet pet : pets()) {
+			pet.play();
+		}		
+	}
 }

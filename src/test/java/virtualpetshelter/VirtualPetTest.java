@@ -44,36 +44,36 @@ public class VirtualPetTest {
 	public void shouldShowVirtualPet() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 0);
 		String asString = underTest.toString();
-		assertEquals("name: name, description: description, hunger: 0, thirst: 0, bathroom: 0, energy: 0", asString);
+		assertEquals("name, description, hunger: 0, thirst: 0, bathroom: 0, energy: 0", asString);
 	}
 
 	@Test
-	public void shouldDecreaseHungerBy1() {
-		VirtualPet underTest = new VirtualPet("name", "description", 1, 0, 0, 0);
+	public void shouldDecreaseHungerBy10() {
+		VirtualPet underTest = new VirtualPet("name", "description", 10, 0, 0, 0);
 		underTest.feed();
 		int hunger = underTest.getHunger();
 		assertEquals(0, hunger);
 	}
 
 	@Test
-	public void shouldDecreaseThirstBy1() {
-		VirtualPet underTest = new VirtualPet("name", "description", 0, 1, 0, 0);
+	public void shouldDecreaseThirstBy10() {
+		VirtualPet underTest = new VirtualPet("name", "description", 0, 10, 0, 0);
 		underTest.water();
 		int thirst = underTest.getThirst();
 		assertEquals(0, thirst);
 	}
 
 	@Test
-	public void shouldDecreaseBathroomBy1() {
-		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 1, 0);
+	public void shouldDecreaseBathroomBy10() {
+		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 10, 0);
 		underTest.letOut();
 		int bathroom = underTest.getBathroom();
 		assertEquals(0, bathroom);
 	}
 
 	@Test
-	public void shouldDecreaseEnergyBy1() {
-		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 1);
+	public void shouldDecreaseEnergyBy10() {
+		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 10);
 		underTest.play();
 		int energy = underTest.getEnergy();
 		assertEquals(0, energy);
@@ -141,6 +141,6 @@ public class VirtualPetTest {
 		VirtualPet underTest = new VirtualPet("name", "description", 10, 10, 10, 10);
 		underTest.tick();
 		String check = underTest.toString();
-		assertEquals("name: name, description: description, hunger: 15, thirst: 15, bathroom: 15, energy: 15", check);
+		assertEquals("name, description, hunger: 15, thirst: 15, bathroom: 15, energy: 15", check);
 	}
 }

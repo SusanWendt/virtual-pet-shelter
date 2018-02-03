@@ -74,8 +74,8 @@ public class VirtualPetShelterTest {
 		VirtualPet pet2 = new VirtualPet("Fido", "description", 15, 0, 0, 0);
 		underTest.addPet(pet2);
 		underTest.feedAllPets();
-		assertEquals(9, pet1.getHunger());
-		assertEquals(14, pet2.getHunger());
+		assertEquals(0, pet1.getHunger());
+		assertEquals(5, pet2.getHunger());
 	}
 
 	@Test
@@ -86,10 +86,31 @@ public class VirtualPetShelterTest {
 		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 26, 0, 0);
 		underTest.addPet(pet2);
 		underTest.waterAllPets();
-		assertEquals(13, pet1.getThirst());
-		assertEquals(25, pet2.getThirst());
+		assertEquals(4, pet1.getThirst());
+		assertEquals(16, pet2.getThirst());
 	}
-
+	@Test
+	public void shouldLetOutAllPets() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Pippy", "dog", 0, 0, 10, 0);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 0, 10, 0);
+		underTest.addPet(pet2);
+		underTest.letOutAllPets();
+		assertEquals(0, pet1.getBathroom());
+		assertEquals(0, pet2.getBathroom());
+	}
+	@Test
+	public void shouldPlayWithAllPets() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Pippy", "dog", 0, 0, 0, 10);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 0, 0, 10);
+		underTest.addPet(pet2);
+		underTest.playWithAllPets();
+		assertEquals(0, pet1.getEnergy());
+		assertEquals(0, pet2.getEnergy());
+	}
 	@Test
 	public void shouldTickAllPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
@@ -110,7 +131,7 @@ public class VirtualPetShelterTest {
 		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 0, 0, 40);
 		underTest.addPet(pet2);
 		underTest.playWithPetByName("Pippy");
-		assertEquals(29, pet1.getEnergy());
+		assertEquals(20, pet1.getEnergy());
 		assertEquals(40, pet2.getEnergy());
 	}
 

@@ -63,34 +63,25 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "" + name + ", " + description + ", hunger: " + hunger + ", thirst: " + thirst
-				+ ", bathroom: " + bathroom + ", energy: " + energy;
+		return "" + name + ", " + description + ", hunger: " + hunger + ", thirst: " + thirst + ", bathroom: "
+				+ bathroom + ", energy: " + energy;
 	}
 
 	// modifier Method
 	public void feed() {
-		if (hunger < 0) {
-			hunger = hunger - 0;
-		}
-		if (hunger < 50) {
-			hunger = hunger - 1;
-		}
-		if (hunger >= 50) {
-			hunger = 50;
-		}
+		hunger = hunger - 10;
 	}
 
 	public void water() {
-		thirst -= 1;
-
+		thirst -= 10;
 	}
 
 	public void letOut() {
-		bathroom -= 1;
+		bathroom -= 10;
 	}
 
 	public void play() {
-		energy -= 1;
+		energy -= 10;
 	}
 
 	public void determineStatus() {
@@ -124,5 +115,4 @@ public class VirtualPet {
 		energy += 5;
 
 	}
-
 }
