@@ -64,7 +64,7 @@ public class VirtualPet {
 	@Override
 	public String toString() {
 		return "" + name + ", " + description + ", hunger: " + hunger + ", thirst: " + thirst + ", bathroom: "
-				+ bathroom + ", energy: " + energy;
+				+ bathroom + ", energy: " + energy + ", status: " + getFooStatus();
 	}
 
 	// modifier Method
@@ -84,28 +84,50 @@ public class VirtualPet {
 		energy -= 10;
 	}
 
-	public void determineStatus() {
-		if (hunger == 0 && thirst == 0 && bathroom == 0 && energy == 0) {
-			status = "Amazing";
-		}
-		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0) {
-			status = "Great";
-		}
-		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10) {
-			status = "Good";
-		}
-		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20) {
-			status = "Content";
-		}
-		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30) {
-			status = "Okay";
+//	public void determineStatus() {
+//		if (hunger == 0 && thirst == 0 && bathroom == 0 && energy == 0) {
+//			status = "Amazing";
+//		}
+//		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0) {
+//			status = "Great";
+//		}
+//		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10) {
+//			status = "Good";
+//		}
+//		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20) {
+//			status = "Content";
+//		}
+//		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30) {
+//			status = "Okay";
+//		}
+//		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40) {
+//			status = "Bad";
+//		}
+//		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50) {
+//			status = "Dead";
+//		}
+//	}
+
+	public String getFooStatus() {
+		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50) {
+			return "dead";
 		}
 		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40) {
-			status = "Bad";
+			return "Bad";
 		}
-		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50) {
-			status = "Dead";
+		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30) {
+			return "Okay";
 		}
+		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20) {
+			return "Content";
+		}
+		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10) {
+			return "Good";
+		}
+		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0) {
+			return "Great";
+		}
+		return "Amazing";
 	}
 
 	public void tick() {
@@ -113,6 +135,7 @@ public class VirtualPet {
 		thirst += 5;
 		bathroom += 5;
 		energy += 5;
+//		determineStatus();
 
 	}
 }

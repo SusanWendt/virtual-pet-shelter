@@ -9,9 +9,11 @@ public class VirtualPetShelterApp {
 
 		VirtualPetShelter myShelter = new VirtualPetShelter();
 		// default VirtualPets
-		myShelter.addPet(new VirtualPet("Lassie", "dog", 25, 25, 25, 25));
-		myShelter.addPet(new VirtualPet("Pippy", "puppy", 25, 25, 25, 25));
-
+		myShelter.addPet(new VirtualPet("Spongebob", "sponge", 25, 25, 25, 25));
+		myShelter.addPet(new VirtualPet("Squidward", "squid", 25, 25, 25, 25));
+		myShelter.addPet(new VirtualPet("Patrick", "star", 25, 25, 25, 25));
+		myShelter.addPet(new VirtualPet("Mr.Crabs", "crab", 25, 25, 25, 25));
+		
 		// welcome message
 		System.out.println("Welcome to BitBuddies Bed and Breakfast, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
 
