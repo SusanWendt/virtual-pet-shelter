@@ -19,7 +19,6 @@ public class VirtualPet {
 		this.thirst = thirst;
 		this.bathroom = bathroom;
 		this.energy = energy;
-
 	}
 
 	// constructor 2
@@ -30,7 +29,6 @@ public class VirtualPet {
 		this.thirst = 25;
 		this.bathroom = 25;
 		this.energy = 25;
-
 	}
 
 	// getter for constructor2: name and description
@@ -41,11 +39,7 @@ public class VirtualPet {
 	public String getDescription() {
 		return description;
 	}
-//	@Override
-//	public String toString() {
-//		return "name: " + name + ", description: " + description;
-//	}
-	
+
 	// accessor aka getters for constructor1
 	public int getHunger() {
 		return hunger;
@@ -69,7 +63,8 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "name: " + name + ", description: " + description + ", hunger: " + hunger + ", thirst: " + thirst + ", bathroom: " + bathroom + ", energy: " + energy;
+		return "name: " + name + ", description: " + description + ", hunger: " + hunger + ", thirst: " + thirst
+				+ ", bathroom: " + bathroom + ", energy: " + energy;
 	}
 
 	// modifier Method
@@ -78,10 +73,10 @@ public class VirtualPet {
 			hunger = hunger - 0;
 		}
 		if (hunger < 50) {
-		hunger = hunger - 1;
+			hunger = hunger - 1;
 		}
-		if (hunger >=50) {
-		hunger = 50;
+		if (hunger >= 50) {
+			hunger = 50;
 		}
 	}
 

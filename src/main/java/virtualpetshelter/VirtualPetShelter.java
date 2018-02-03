@@ -32,7 +32,28 @@ public class VirtualPetShelter {
 
 	public void adoptPet(String name) {
 		pets.remove(name);
-
 	}
 
+	public void feedAllPets() {
+		for (VirtualPet pet : pets()) {
+			pet.feed();
+		}
+	}
+
+	public void waterAllPets() {
+		for (VirtualPet pet : pets()) {
+			pet.water();
+		}
+	}
+
+	public void tickAllPets() {
+		for (VirtualPet pet : pets()) {
+			pet.tick();
+		}
+	}
+
+	public void playWithPetByName(String name) {
+		VirtualPet playWithPet = getPetByName(name);
+		playWithPet.play();
+	}
 }

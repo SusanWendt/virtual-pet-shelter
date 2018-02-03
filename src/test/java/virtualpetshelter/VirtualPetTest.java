@@ -1,7 +1,6 @@
 package virtualpetshelter;
 
 import static org.junit.Assert.assertEquals;
-//import org.junit.Assert;
 import org.junit.Test;
 
 public class VirtualPetTest {
@@ -144,14 +143,4 @@ public class VirtualPetTest {
 		String check = underTest.toString();
 		assertEquals("name: name, description: description, hunger: 15, thirst: 15, bathroom: 15, energy: 15", check);
 	}
-
-//	@Test //fails
-//	public void shouldShowVirtualPetNameDescription() {
-//		VirtualPet underTest = new VirtualPet("name", "description");
-//		String asString = underTest.toString();
-//		assertEquals("name: fido, description: dog", asString);
-//		// TODO include a constructor that, in addition to name and description, accepts
-//		// default values for the pet’s attributes (hunger, boredom, etc)
-//
-//	}
 }

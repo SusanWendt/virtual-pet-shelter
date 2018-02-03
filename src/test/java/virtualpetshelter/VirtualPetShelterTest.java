@@ -14,11 +14,10 @@ public class VirtualPetShelterTest {
 	// [X]return a specific VirtualPet given its name
 	// [X]allow intake of a homeless pet
 	// [X]allow adoption of a homeless pet
-	// []feed all of the pets in the shelter
-	// []water all of the pets in the shelter
-	// []plays (or performs some other interaction(s)) with an individual pet in the
-	// shelter
-	// []include a tick method that calls the tick method for each of the pets in
+	// [X]feed all of the pets in the shelter
+	// [X]water all of the pets in the shelter
+	// [X]plays (or performs other method with an individual pet in the shelter
+	// [X]include a tick method that calls the tick method for each of the pets in
 	// the shelter, updating their needs
 
 	@Test
@@ -65,6 +64,54 @@ public class VirtualPetShelterTest {
 		underTest.adoptPet(petName);
 		VirtualPet retrieved = underTest.getPetByName(petName);
 		assertEquals(null, retrieved);
+	}
+
+	@Test
+	public void shouldFeedPets() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Lassie", "description", 10, 0, 0, 0);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "description", 15, 0, 0, 0);
+		underTest.addPet(pet2);
+		underTest.feedAllPets();
+		assertEquals(9, pet1.getHunger());
+		assertEquals(14, pet2.getHunger());
+	}
+
+	@Test
+	public void shouldWaterAllPets() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Pippy", "dog", 0, 14, 0, 0);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 26, 0, 0);
+		underTest.addPet(pet2);
+		underTest.waterAllPets();
+		assertEquals(13, pet1.getThirst());
+		assertEquals(25, pet2.getThirst());
+	}
+
+	@Test
+	public void shouldTickAllPets() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Pippy", "dog", 0, 15, 0, 0);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 25, 0, 0);
+		underTest.addPet(pet2);
+		underTest.tickAllPets();
+		assertEquals(20, pet1.getThirst());
+		assertEquals(30, pet2.getThirst());
+	}
+
+	@Test
+	public void shouldPlayWithOnePet() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet pet1 = new VirtualPet("Pippy", "dog", 0, 0, 0, 30);
+		underTest.addPet(pet1);
+		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 0, 0, 40);
+		underTest.addPet(pet2);
+		underTest.playWithPetByName("Pippy");
+		assertEquals(29, pet1.getEnergy());
+		assertEquals(40, pet2.getEnergy());
 	}
 
 }
