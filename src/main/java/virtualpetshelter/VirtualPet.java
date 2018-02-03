@@ -74,7 +74,15 @@ public class VirtualPet {
 
 	// modifier Method
 	public void feed() {
+		if (hunger < 0) {
+			hunger = hunger - 0;
+		}
+		if (hunger < 50) {
 		hunger = hunger - 1;
+		}
+		if (hunger >=50) {
+		hunger = 50;
+		}
 	}
 
 	public void water() {
