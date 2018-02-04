@@ -8,20 +8,21 @@ public class VirtualPetShelterApp {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter myShelter = new VirtualPetShelter();
-		// default VirtualPets
-		myShelter.addPet(new VirtualPet("Bob", "sponge", 25, 25, 25, 25));
-		myShelter.addPet(new VirtualPet("Patrick", "star", 25, 25, 25, 25));
 
 		// welcome message
 		System.out.println("Welcome to BitBuddies Bed and Breakfast, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
 
-		//game loop
+		// default VirtualPets
+		myShelter.addPet(new VirtualPet("Bob", "sponge", 25, 25, 25, 25));
+		myShelter.addPet(new VirtualPet("Patrick", "star", 25, 25, 25, 25));
+
+		// game loop
 		String option = "";
 		while (!option.equals("quit")) {
-			//pets displayed
+			// pets displayed
 			System.out.println("Your Virtual Pet inventory:");
 			myShelter.showPets();
-			//game menu
+			// game menu
 			System.out.println("What would you like to do?");
 			System.out.println("1) Feed all the pets.");
 			System.out.println("2) Water all the pets.");

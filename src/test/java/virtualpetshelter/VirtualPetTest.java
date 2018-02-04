@@ -33,14 +33,14 @@ public class VirtualPetTest {
 		assertEquals(1, energy);
 	}
 
-	@Test //fails
+	@Test
 	public void shouldGetStatus() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 0);
 		String status = underTest.getStatus();
-		assertEquals(null, status);
+		assertEquals("Amazing", status);
 	}
 
-	@Test 
+	@Test
 	public void shouldShowVirtualPet() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 0);
 		String asString = underTest.toString();
@@ -82,40 +82,40 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDetermineStatusAmazing() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 0);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Amazing", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusGreat() {
 		VirtualPet underTest = new VirtualPet("name", "description", 10, 10, 10, 10);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Great", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusGood() {
 		VirtualPet underTest = new VirtualPet("name", "description", 20, 20, 20, 20);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Good", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusContent() {
 		VirtualPet underTest = new VirtualPet("name", "description");
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Content", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusOkay() {
 		VirtualPet underTest = new VirtualPet("name", "description", 40, 40, 40, 40);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Okay", status);
 
 	}
@@ -123,16 +123,16 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDetermineStatusBad() {
 		VirtualPet underTest = new VirtualPet("name", "description", 45, 45, 45, 45);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("Bad", status);
 	}
 
 	@Test
 	public void shouldDetermineStatus() {
 		VirtualPet underTest = new VirtualPet("name", "description", 50, 50, 50, 50);
-		underTest.getFooStatus();
-		String status = underTest.getFooStatus();
+		underTest.getStatus();
+		String status = underTest.getStatus();
 		assertEquals("dead", status);
 	}
 

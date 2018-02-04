@@ -89,6 +89,7 @@ public class VirtualPetShelterTest {
 		assertEquals(4, pet1.getThirst());
 		assertEquals(16, pet2.getThirst());
 	}
+
 	@Test
 	public void shouldLetOutAllPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
@@ -100,6 +101,7 @@ public class VirtualPetShelterTest {
 		assertEquals(0, pet1.getBathroom());
 		assertEquals(0, pet2.getBathroom());
 	}
+
 	@Test
 	public void shouldPlayWithAllPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
@@ -111,6 +113,7 @@ public class VirtualPetShelterTest {
 		assertEquals(0, pet1.getEnergy());
 		assertEquals(0, pet2.getEnergy());
 	}
+
 	@Test
 	public void shouldTickAllPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();

@@ -66,6 +66,6 @@ public class VirtualPetShelter {
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
 			pet.play();
-		}		
+		}
 	}
 }
