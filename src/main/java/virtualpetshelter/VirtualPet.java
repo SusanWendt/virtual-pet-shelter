@@ -59,8 +59,7 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "" + name + ", " + description + ", hunger: " + hunger + ", thirst: " + thirst + ", bathroom: "
-				+ bathroom + ", energy: " + energy + ", status: " + getStatus();
+		return "" + name + "\t\t|" + description + "\t\t|" + hunger + "\t\t|" + thirst + "\t\t|" + bathroom + "\t\t|" + energy + "\t\t|" + getStatus();
 	}
 
 	// modifier Method

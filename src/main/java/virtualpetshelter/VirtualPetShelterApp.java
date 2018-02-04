@@ -11,27 +11,50 @@ public class VirtualPetShelterApp {
 
 		// welcome message
 		System.out.println("Welcome to BitBuddies Bed and Breakfast, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
-
-		// default VirtualPets
-		myShelter.addPet(new VirtualPet("Bob", "sponge", 25, 25, 25, 25));
-		myShelter.addPet(new VirtualPet("Patrick", "star", 25, 25, 25, 25));
+		// default VirtualPets options
+		System.out.println("Please select a theme for your pet inventory: ");
+		System.out.println("1) Bikini Bottom");
+		System.out.println("2) Dogs");
+		String themeChosen = input.nextLine();
+		if (themeChosen.equals("1")) {
+			myShelter.addPet(new VirtualPet("Bob", "sea sponge", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Patrick", "just a star", 25, 25, 25, 25));
+		}
+		if (themeChosen.equals("2")) {
+			myShelter.addPet(new VirtualPet("Lassie", "Smart Collie", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Fido", "Loyal Dog", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Cujo", "Nightmare", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Snoopy", "Cartoon", 25, 25, 25, 25));
+		}
 
 		// game loop
 		String option = "";
 		while (!option.equals("quit")) {
 			// pets displayed
 			System.out.println("Your Virtual Pet inventory:");
+			System.out.print("\tname\t");
+			System.out.print("| description \t\t");
+			System.out.print("| hunger \t");
+			System.out.print("| thirst \t");
+			System.out.print("| bathroom \t");
+			System.out.print("| energy \t");
+			System.out.print("| status \t");
+			System.out.println();
+			System.out.println(
+					"----------------|-----------------------|---------------|---------------|---------------|---------------|---------------");
 			myShelter.showPets();
+			System.out.println();
+
 			// game menu
 			System.out.println("What would you like to do?");
 			System.out.println("1) Feed all the pets.");
 			System.out.println("2) Water all the pets.");
 			System.out.println("3) Let out all the pets to go to the bathroom .");
 			System.out.println("4) Playtime for all of the pets.");
-			System.out.println("5) Play with a pet by name.");
-			System.out.println("6) Chose pet to be adopted by a loving family.");
+			System.out.println("5) Play with just one pet.");
+			System.out.println("6) Choose a pet to be adopted by a loving family.");
 			System.out.println("7) Invite a new pet to BitBuddies Bed and Breakfast.");
-			System.out.println("Or type 'quit' at anytime to exit game.");
+			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
 
 			if (option.equals("1")) {
@@ -48,7 +71,7 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("4")) {
 				myShelter.playWithAllPets();
-				System.out.println("You have chosen to water all the pets.");
+				System.out.println("You have chosen to play with all the pets.");
 			}
 			if (option.equals("5")) {
 				System.out.println("Which pet would you like to play with? Type name:");
