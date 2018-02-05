@@ -36,13 +36,14 @@ public class VirtualPetShelter {
 
 	public void feedAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.feed();
+			pet.feed(10);
 		}
 	}
 
 	public void waterAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.water();
+			pet.water(10);
+			pet.letOut(-5);
 		}
 	}
 
@@ -54,18 +55,18 @@ public class VirtualPetShelter {
 
 	public void playWithPetByName(String name) {
 		VirtualPet playWithPet = getPetByName(name);
-		playWithPet.play();
+		playWithPet.play(15);
 	}
 
 	public void letOutAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.letOut();
+			pet.letOut(10);
 		}
 	}
 
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.play();
+			pet.play(10);
 		}
 	}
 }

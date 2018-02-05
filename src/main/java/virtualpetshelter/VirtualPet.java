@@ -59,24 +59,25 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "" + name + "\t\t|" + description + "\t\t|" + hunger + "\t\t|" + thirst + "\t\t|" + bathroom + "\t\t|" + energy + "\t\t|" + getStatus();
+		return "" + name + "\t\t|" + description + "\t\t|" + hunger + "\t\t|" + thirst + "\t\t|" + bathroom + "\t\t|"
+				+ energy + "\t\t|" + getStatus();
 	}
 
 	// modifier Method
-	public void feed() {
-		hunger = hunger - 10;
+	public void feed(int amountToFeed) {
+		hunger = hunger - amountToFeed;
 	}
 
-	public void water() {
-		thirst -= 10;
+	public void water(int amountToWater) {
+		thirst -= amountToWater;
 	}
 
-	public void letOut() {
-		bathroom -= 10;
+	public void letOut(int amountToLetOut) {
+		bathroom -= amountToLetOut;
 	}
 
-	public void play() {
-		energy -= 10;
+	public void play(int amountToPlay) {
+		energy -= amountToPlay;
 	}
 
 	public String getStatus() {

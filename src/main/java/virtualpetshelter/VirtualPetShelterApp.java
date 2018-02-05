@@ -15,16 +15,25 @@ public class VirtualPetShelterApp {
 		System.out.println("Please select a theme for your pet inventory: ");
 		System.out.println("1) Bikini Bottom");
 		System.out.println("2) Dogs");
+		System.out.println("3) Disney");
 		String themeChosen = input.nextLine();
+
 		if (themeChosen.equals("1")) {
 			myShelter.addPet(new VirtualPet("Bob", "sea sponge", 25, 25, 25, 25));
 			myShelter.addPet(new VirtualPet("Patrick", "just a star", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("MrCrabs", "stressed", 25, 25, 25, 25));
 		}
 		if (themeChosen.equals("2")) {
 			myShelter.addPet(new VirtualPet("Lassie", "Smart Collie", 25, 25, 25, 25));
 			myShelter.addPet(new VirtualPet("Fido", "Loyal Dog", 25, 25, 25, 25));
 			myShelter.addPet(new VirtualPet("Cujo", "Nightmare", 25, 25, 25, 25));
 			myShelter.addPet(new VirtualPet("Snoopy", "Cartoon", 25, 25, 25, 25));
+		}
+		if (themeChosen.equals("3")) {
+			myShelter.addPet(new VirtualPet("Mickey", "the Mouse", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Minnie", "also Mouse", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Donald", "the Duck", 25, 25, 25, 25));
+			myShelter.addPet(new VirtualPet("Pluto", "the Dog", 25, 25, 25, 25));
 		}
 
 		// game loop
@@ -63,7 +72,8 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("2")) {
 				myShelter.waterAllPets();
-				System.out.println("You have chosen to water all the pets.");
+				System.out.println(
+						"You have chosen to water all the pets. But now need to go to the bathroom has increased.");
 			}
 			if (option.equals("3")) {
 				myShelter.letOutAllPets();

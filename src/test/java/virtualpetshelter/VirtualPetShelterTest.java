@@ -134,7 +134,7 @@ public class VirtualPetShelterTest {
 		VirtualPet pet2 = new VirtualPet("Fido", "puppy", 0, 0, 0, 40);
 		underTest.addPet(pet2);
 		underTest.playWithPetByName("Pippy");
-		assertEquals(20, pet1.getEnergy());
+		assertEquals(15, pet1.getEnergy());
 		assertEquals(40, pet2.getEnergy());
 	}
 

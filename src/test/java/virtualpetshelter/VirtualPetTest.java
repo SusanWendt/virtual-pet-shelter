@@ -51,7 +51,7 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDecreaseHungerBy10() {
 		VirtualPet underTest = new VirtualPet("name", "description", 10, 0, 0, 0);
-		underTest.feed();
+		underTest.feed(10);
 		int hunger = underTest.getHunger();
 		assertEquals(0, hunger);
 	}
@@ -59,7 +59,7 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDecreaseThirstBy10() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 10, 0, 0);
-		underTest.water();
+		underTest.water(10);
 		int thirst = underTest.getThirst();
 		assertEquals(0, thirst);
 	}
@@ -67,7 +67,7 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDecreaseBathroomBy10() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 10, 0);
-		underTest.letOut();
+		underTest.letOut(10);
 		int bathroom = underTest.getBathroom();
 		assertEquals(0, bathroom);
 	}
@@ -75,7 +75,7 @@ public class VirtualPetTest {
 	@Test
 	public void shouldDecreaseEnergyBy10() {
 		VirtualPet underTest = new VirtualPet("name", "description", 0, 0, 0, 10);
-		underTest.play();
+		underTest.play(10);
 		int energy = underTest.getEnergy();
 		assertEquals(0, energy);
 	}
