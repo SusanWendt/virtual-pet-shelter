@@ -40,7 +40,7 @@ public class VirtualPet {
 		return description;
 	}
 
-	// accessor aka getters for constructor1
+	// accessor aka getters for constructor 1
 	public int getHunger() {
 		return hunger;
 	}
